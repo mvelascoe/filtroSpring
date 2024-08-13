@@ -12,7 +12,7 @@ public class Customer {
     @Column(name = "namecustomer", length = 50, nullable = false)
     private String name;
 
-    @Column(name = "lastname", length = 50, nullable = false)
+    @Column(name = "lastnamecustomer", length = 50, nullable = false)
     private String lastname;
 
     @ManyToOne
@@ -26,16 +26,18 @@ public class Customer {
     private String birthdate;
 
     @Column(name = "Ion", length = 100, nullable = false)
-    private boolean ion;
+    private String ion;
 
     @Column(name = "latitud", length = 100, nullable = false)
-    private boolean latitud;
+    private String latitud;
 
     public Customer() {
     }
 
-    public Customer(String name, String lastname, City city, String email, String birthdate, boolean ion,
-            boolean latitud) {
+   
+
+    public Customer(String name, String lastname, City city, String email, String birthdate, String ion,
+        String latitud) {
         this.name = name;
         this.lastname = lastname;
         this.city = city;
@@ -44,6 +46,8 @@ public class Customer {
         this.ion = ion;
         this.latitud = latitud;
     }
+
+
 
     public Long getId() {
         return id;
@@ -93,27 +97,35 @@ public class Customer {
         this.birthdate = birthdate;
     }
 
-    public boolean isIon() {
+
+
+    public String getIon() {
         return ion;
     }
 
-    public void setIon(boolean ion) {
+
+
+    public void setIon(String ion) {
         this.ion = ion;
     }
 
-    public boolean isLatitud() {
+
+
+    public String getLatitud() {
         return latitud;
     }
 
-    public void setLatitud(boolean latitud) {
+
+
+    public void setLatitud(String latitud) {
         this.latitud = latitud;
     }
+
+
 
     @Override
     public String toString() {
         return "Customer [id=" + id + ", name=" + name + ", lastname=" + lastname + ", city=" + city + ", email="
                 + email + ", birthdate=" + birthdate + ", ion=" + ion + ", latitud=" + latitud + "]";
     }
-
-    
 }
